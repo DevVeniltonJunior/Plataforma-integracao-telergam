@@ -4,7 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
+    "dev": "npm run build && node ./dist/infra/config/server/App.js",
+    "eslint": "npx eslint .",
+    "test": "jest --passWithNoTests --no-cache -runInBand",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --coverage",
+    "test:domain": "npm run test ./src/domain",
+    "test:infra": "npm run test ./src/infra",
+    "test:presentation": "npm run test ./src/presentation",
+    "test:vo": "npm run test ./src/domain/valueObjects",
+    "test:repositories": "npm run test ./src/infra/repositories",
+    "test:controllers": "npm run test ./src/presentation/controllers",
+    "prisma:migration": "npx prisma migrate dev --name",
+    "prisma:resolve": "prisma migrate resolve --applied 20231012205730_init",
+    "prisma:apply": "prisma migrate deploy && prisma generate"
   },
   "keywords": [],
   "author": "",
