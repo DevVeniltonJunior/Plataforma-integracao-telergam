@@ -6,8 +6,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: senha_root123
       MYSQL_DATABASE: enterprise
-      MYSQL_USER: bd_user
-      MYSQL_PASSWORD: senha_user
+      MYSQL_USER: bdUser
+      MYSQL_PASSWORD: senhaUser
     ports:
       - "3306:3306"
     volumes:
