@@ -7,7 +7,7 @@ export class User {
     private readonly _id: UserId,
     private readonly _name: UserName,
     private readonly _email: Email,
-    private readonly _password: Password[],
+    private readonly _password: Password,
     private readonly _chats?: Chat[]
   ) {}
 
@@ -23,7 +23,7 @@ export class User {
     return this._email
   }
 
-  public getPassword(): Password[] {
+  public getPassword(): Password {
     return this._password
   }
 
@@ -36,7 +36,7 @@ export class User {
       id: this._id.toNumber(),
       name: this._name.toString(),
       email: this._email.toString(),
-      password: this._password.map(pass => pass.toJson()),
+      password: this._password.toJson(),
       chats: this._chats ? this._chats.map(chat => chat.toJson()) : undefined
     }
   }
