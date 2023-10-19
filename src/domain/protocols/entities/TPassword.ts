@@ -12,9 +12,4 @@ export namespace TPassword {
     value: string
     status: string
   }
-
-  export type DTO = {
-    id: number
-    status?: string
-  }
 }
