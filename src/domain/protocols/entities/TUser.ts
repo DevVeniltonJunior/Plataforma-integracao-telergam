@@ -5,7 +5,6 @@ export namespace TUser {
     id: number
     name: string
     email: string
-    password: TPassword.Entity
     chats?: TChat.Entity[]
   }
 
@@ -13,7 +12,6 @@ export namespace TUser {
     id: number
     name: string
     email: string
-    password: TPassword.Model
     chats?: TChat.Model[]
   }
 

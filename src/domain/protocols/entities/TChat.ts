@@ -5,13 +5,13 @@ export namespace TChat {
     id: number
     user_id: number
     name: string
-    messages: TMessage.Entity[]
+    messages?: TMessage.Entity[]
   }
 
   export type Model = {
     id: number
     user_id: number
     name: string
-    messages: TMessage.Model[]
+    messages?: TMessage.Model[]
   }
 }

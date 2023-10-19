@@ -7,7 +7,7 @@ export class Chat {
     private readonly _id: ChatId,
     private readonly _userId: UserId,
     private readonly _name: ChatName,
-    private readonly _messages: Message[]
+    private readonly _messages?: Message[]
   ) {}
 
   public getId(): ChatId {
@@ -22,7 +22,7 @@ export class Chat {
     return this._name
   }
 
-  public getMessages(): Message[] {
+  public getMessages(): Message[] | undefined {
     return this._messages
   }
 
@@ -31,7 +31,7 @@ export class Chat {
       id: this._id.toNumber(),
       user_id: this._userId.toNumber(),
       name: this._name.toString(),
-      messages: this._messages.map(msg => msg.toJson())
+      messages: this._messages ? this._messages.map(msg => msg.toJson()) : undefined
     }
   }
 }
